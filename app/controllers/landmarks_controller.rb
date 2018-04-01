@@ -42,5 +42,29 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/show'
   end
 
+  post '/landmarks/:id' do
+    @landmark = Landmark.find(params[:id])
+    @landmark.update(params["landmark"])
 
+    # if !params["owner"]["name"].empty?
+    #   owner = Owner.create(name: params["owner"]["name"])
+    #   @pet.owner_id = owner.id
+    # end
+
+    # p param
+    # p params["pet"]
+    # how do i find the owner at this point, tho?
+    # do i need the owner?
+    # wouldnt clear the owner's pets array. prolly an easier way
+    # where.. changing it from the pets side will handle everything.
+    # @owner = Owner.find(params["owner"]["name"])
+    # that easy?
+
+
+    # @pet.owner_id = params["owner"]["name"]
+    # @pet.save
+    #
+
+    redirect to "landmarks/#{@landmark.id}"
+  end
 end
