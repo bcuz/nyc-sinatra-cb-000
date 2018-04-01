@@ -12,10 +12,10 @@ class FiguresController < ApplicationController
   @figure = Figure.create(params[:figure])
   #
   #
-  # if !params["pet"]["name"].empty?
-  #   @owner.pets << Pet.create(name: params["pet"]["name"])
-  # end;
-  # @owner.save
+  if !params["title"]["name"].empty?
+    @figure.titles << Title.create(name: params["title"]["name"])
+  end
+  @title.save
   # redirect "owners/#{@owner.id}"
   end
 end
