@@ -5,6 +5,10 @@ class FiguresController < ApplicationController
     # p @pets.size
     # binding.pry
 
+    @titles = Title.all
+    @landmarks = Landmark.all
+
+
 
     erb :'/figures/new'
   end
